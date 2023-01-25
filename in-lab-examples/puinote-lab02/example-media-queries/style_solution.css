@@ -5,8 +5,8 @@
 .container.responsive {
   flex-wrap: wrap;
 }
-
-@media only screen and (min-width: 600px) {
+/* has to reach atleast 600 before this occurs */
+@media only screen and (min-width: 600px) { 
   .column.responsive {
     width: 33%;
   }
