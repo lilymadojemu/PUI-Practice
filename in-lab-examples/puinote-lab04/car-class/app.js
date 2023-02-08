@@ -7,8 +7,16 @@ class Car {
    * element - the HTML element that this car will update
    */
 
+  model;
+  year;
+  element;
+  isMoving=false
+
   constructor(model, year, element) {
-    /* Initialize the car's properties here */
+    // /* Initialize the car's properties here */ assign class to instances
+    this.model = model;
+    this.year = year;
+    this.element = element;
   }
 
   /**
@@ -18,15 +26,25 @@ class Car {
    * class to the car element when it is moving.
    */
   updateElement() {
-    // implement this
+    this.element.innerText = this.model + ' ' + this.year;
+    // If Moving
+    if (this.isMoving) {
+      this.element.classList.add('moving-car');
+      this.element.innerText += ' is driving.';
+    // If not moving
+    } else {
+      this.element.classList.remove('moving-car');
+    }
   }
 
   drive() {
-    // implement this
+    this.isMoving = true;
+    this.updateElement();
   }
 
   brake() {
-    // implement this
+    this.isMoving = false;
+    this.updateElement();
   }
 }
 
@@ -35,5 +53,8 @@ class Car {
  model "Chevy Corvette", the year "2022", and the car element. Then call
  updateElement().
 */
-let carElement = null; // implement
-let theCar = null; // implement
+let carElement = document.querySelector('.car'); // implement
+
+// Making a new car using the Car Class
+// Elements refers to abilities like drive and brake
+let theCar = new Car("Tezzy", 2023, carElement); // implement
