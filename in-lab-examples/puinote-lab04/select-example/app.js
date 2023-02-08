@@ -47,9 +47,9 @@ function onSelectValueChange() {
 // When the page loads, find the select element.
 let selectElement = document.querySelector('#car-select');
 
-// Let's add a new car to the allCars array.
+// Let's add a new car to the allCars array. New car object + add to array
 let newCar = {
-  model: 'Honda Odyssey',
+  model: 'Tezzy',
   description: 'A practical minivan for soccer moms and everyone else.',
 };
 allCars.push(newCar);
@@ -65,6 +65,7 @@ selectElement.add(option);
 // Give it a listener for the 'change' event, which is a function that will run
 // when the selected option changes. You could also do this by setting the
 // onchange property of selectElement, e.g. selectElement.onchange = ...
+// Can do in html file with selectElement.onchange like with car class example
 selectElement.addEventListener('change', onSelectValueChange);
 
 // Initially, display the first car
